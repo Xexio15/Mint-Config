@@ -119,12 +119,12 @@ else
     } &>> config.log
     echo "Git Username:"
     read gituser
-    echo "Git Email"
+    echo "Git Email (remember to use github.noreply if private mail https://github.com/settings/emails):"
     read gitemail
     echo -e '\e[1A\e[K\e[1A\e[K'
     {
-        git config –global user.name $gituser
-        git config –global user.email $gitemail
+        git config --global user.name $gituser
+        git config --global user.email $gitemail
     } &>> config.log
     if  command -v git &> /dev/null
     then
