@@ -580,6 +580,125 @@ else
     fi
 fi
 
+#CHERRYTREE
+echo -e "CherryTree\tINSTALLING"
+if  command -v cherrytree &> /dev/null
+then
+    echo -e '\e[1A\e[KCherryTree\tALREADY INSTALLED'
+else
+    {
+        sudo add-apt-repository ppa:giuspen/ppa
+        sudo apt update
+        sudo apt install cherrytree
+    } &>> config.log
+    if  command -v cherrytree &> /dev/null
+    then
+        echo -e '\e[1A\e[KCherryTree\tOK'
+    else
+        echo -e '\e[1A\e[KCherryTree\tFAILED'
+    fi
+fi
+
+#NMAP
+echo -e "Nmap\tINSTALLING"
+if  command -v nmap &> /dev/null
+then
+    echo -e '\e[1A\e[KNmap\tALREADY INSTALLED'
+else
+    {
+        sudo apt install nmap
+    } &>> config.log
+    if  command -v nmap &> /dev/null
+    then
+        echo -e '\e[1A\e[KNmap\tOK'
+    else
+        echo -e '\e[1A\e[KNmap\tFAILED'
+    fi
+fi
+
+#HASHCAT
+echo -e "Hashcat\tINSTALLING"
+if  command -v hashcat &> /dev/null
+then
+    echo -e '\e[1A\e[KHashcat\tALREADY INSTALLED'
+else
+    {
+        sudo apt install hashcat
+    } &>> config.log
+    if  command -v hashcat &> /dev/null
+    then
+        echo -e '\e[1A\e[KHashcat\tOK'
+    else
+        echo -e '\e[1A\e[KHashcat\tFAILED'
+    fi
+fi
+
+#JohnTheRipper
+echo -e "JohnTheRipper\tINSTALLING"
+if  command -v john &> /dev/null
+then
+    echo -e '\e[1A\e[KJohnTheRipper\tALREADY INSTALLED'
+else
+    {
+        sudo apt install john
+    } &>> config.log
+    if  command -v john &> /dev/null
+    then
+        echo -e '\e[1A\e[KJohnTheRipper\tOK'
+    else
+        echo -e '\e[1A\e[KJohnTheRipper\tFAILED'
+    fi
+fi
+
+#PROXYCHAINS
+echo -e "Proxychains\tINSTALLING"
+if  command -v proxychains &> /dev/null
+then
+    echo -e '\e[1A\e[KProxychains\tALREADY INSTALLED'
+else
+    {
+        sudo apt install proxychains
+    } &>> config.log
+    if  command -v proxychains &> /dev/null
+    then
+        echo -e '\e[1A\e[KProxychains\tOK'
+    else
+        echo -e '\e[1A\e[KProxychains\tFAILED'
+    fi
+fi
+
+#AIRCRACK-NG
+echo -e "Aircrack-NG\tINSTALLING"
+if  command -v aircrack-ng &> /dev/null
+then
+    echo -e '\e[1A\e[KAircrack-NG\tALREADY INSTALLED'
+else
+    {
+        sudo apt install aircrack-ng
+    } &>> config.log
+    if  command -v aircrack-ng &> /dev/null
+    then
+        echo -e '\e[1A\e[KAircrack-NG\tOK'
+    else
+        echo -e '\e[1A\e[KAircrack-NG\tFAILED'
+    fi
+fi
+
+#LINPEAS
+echo -e "LinPEAS\tDOWNLOADING"
+{
+    git clone https://github.com/carlospolop/PEASS-ng.git
+} &>> config.log
+echo -e '\e[1A\e[KLinPEAS\tDONE'
+
+#MIMIKATZ
+echo -e "Mimikatz\tDOWNLOADING"
+{
+    git clone https://github.com/ParrotSec/mimikatz.git
+} &>> config.log
+echo -e '\e[1A\e[KMimikatz\tDONE'
+
+
 #WORDLISTS
 mkdir ~/Wordlists
 cd ~/Wordlists
@@ -589,6 +708,7 @@ echo -e "Wordlists\tDOWNLOADING"
     git clone https://github.com/3ndG4me/KaliLists.git
 } &>> config.log
 echo -e '\e[1A\e[KWordlists\tDONE'
+
 #BURP
 echo "REMEMBER INSTALL BURP https://portswigger.net/burp/releases"
 
